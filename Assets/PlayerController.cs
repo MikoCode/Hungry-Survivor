@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public bool canShoot, doubleShoot;
     private Rigidbody2D rb;
     public Vector2 moveInput;
+    public HealthBar healthBar;
 
     void Start()
     {
@@ -99,10 +100,17 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        healthBar.UpdateHealth(currentHealth / maxHealth);
         if (currentHealth <= 0)
         {
             Die();
         }
+    }
+
+    public void Heal(float heal)
+    {
+        currentHealth += heal;
+        healthBar.UpdateHealth(currentHealth / maxHealth);
     }
 
     void Die()

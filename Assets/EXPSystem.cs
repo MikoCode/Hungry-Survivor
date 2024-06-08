@@ -16,14 +16,19 @@ public class EXPSystem : MonoBehaviour
     public float minScale = 1f; // Minimalna skala gracza
     public float maxScale = 5f; // Maksymalna skala gracza
     public Slider slider;
+    public TextMeshProUGUI sliderText;
     public float levelValue;
     private Vector3 initialScale; // Pocz¹tkowa skala gracza
-    public Button[] upgradeButtons;
+    public GameObject upgradeButtons;
+    private EnemySpawner spawner;
+    public UpgradeManager upgradeManager;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        initialScale = transform.localScale;
+        initialScale = player.transform.localScale;
+        spawner = GetComponent<EnemySpawner>();
     }
 
     // Update is called once per frame
@@ -36,11 +41,19 @@ public class EXPSystem : MonoBehaviour
         }
     }
 
+   
     public void LevelUp()
     {
         PlayerLevel += 1;
+
+        sliderText.text = "lvl " + PlayerLevel;
         currentEXP -= expNeeded;
         expNeeded += 20;
+        upgradeButtons.gameObject.SetActive(true);
+        upgradeManager.AssignActionsToButtons();
+        Time.timeScale = 0;
+       
+        
     }
 
     public void GainExp(int exp)
@@ -59,7 +72,7 @@ public class EXPSystem : MonoBehaviour
     {
         float scalePercentage = (float)totalEXP / maxEXP; // Obliczenie procentowej wartoœci poziomu
         float newScale = Mathf.Lerp(minScale, maxScale, scalePercentage); // Interpolacja liniowa dla nowej skali gracza
-        transform.localScale = initialScale * newScale; // Ustawienie nowej skali gracza
+       player.gameObject.transform.localScale = initialScale * newScale; // Ustawienie nowej skali gracza
     }
 
 
@@ -69,6 +82,12 @@ public class EXPSystem : MonoBehaviour
         levelValue = (currentEXP / expNeeded);
 
         slider.value = levelValue;
+    }
+
+    public void AfterLevelUp()
+    {
+        Time.timeScale = 1;
+        upgradeButtons.SetActive(false);
     }
 }
 

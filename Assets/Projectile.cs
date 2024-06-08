@@ -7,6 +7,8 @@ public class Projectile : MonoBehaviour
     public float speed = 10f;
     public int damage;
     private Vector2 target;
+    public bool isIce;
+    public bool isFire;
 
     public void Start()
     {
@@ -25,6 +27,16 @@ public class Projectile : MonoBehaviour
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(GameManager.Instance.bulletDamage);
 
+            if (isIce)
+            {
+                collision.gameObject.GetComponent<Enemy>().StopBurning();
+                collision.gameObject.GetComponent<Enemy>().Ice();
+            }
+            if(isFire)
+            {
+                collision.gameObject.GetComponent<Enemy>().StartBurning();
+            }
+            
             Destroy(gameObject);
         }
     }

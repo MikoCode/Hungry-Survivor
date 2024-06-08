@@ -384,6 +384,7 @@
 "Assets/EXPBall.cs"
 "Assets/EXPSystem.cs"
 "Assets/GameManager.cs"
+"Assets/HealthBar.cs"
 "Assets/PlayerController.cs"
 "Assets/Projectile.cs"
 "Assets/UpgradeManager.cs"

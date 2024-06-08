@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefab;
+    public int maxEnemyType;
     public float spawnInterval = 2f;
     public float minDistance = 5f;
     public float maxDistance = 10f;
@@ -12,8 +13,11 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        maxEnemyType = 1;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(SpawnEnemies());
+        InvokeRepeating("NewEnemies", 90, 210);
+        InvokeRepeating("IncreaseDiffuculty", 30, 60);
     }
 
     IEnumerator SpawnEnemies()
@@ -21,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             Vector2 spawnPosition = GetRandomSpawnPosition();
-            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            Instantiate(enemyPrefab[Random.Range(0, maxEnemyType)], spawnPosition, Quaternion.identity);
             yield return new WaitForSeconds(spawnInterval);
         }
     }
@@ -34,6 +38,27 @@ public class EnemySpawner : MonoBehaviour
         Vector2 spawnPosition = (Vector2)player.position + spawnDirection * distance;
         return spawnPosition;
     }
+
+    public void IncreaseDiffuculty()
+    {
+        if(spawnInterval > 0.2f)
+        {
+            spawnInterval *= 0.97f;
+        }
+       
+
+    }
+
+    public void NewEnemies()
+    {
+        if(maxEnemyType < 4)
+        {
+            maxEnemyType += 1;
+        }
+       
+    }
+
+
 }
 
 

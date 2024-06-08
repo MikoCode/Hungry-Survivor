@@ -10,6 +10,11 @@ public class Enemy : MonoBehaviour
     public GameObject exp;
     private Transform player;
     private Rigidbody2D rb;
+    public bool isBurning;
+    private int burnDamage = 10;
+    private float burnInterval = 1f;
+    public GameObject fireParticle;
+    public GameObject iceParticle;
 
     void Start()
     {
@@ -51,5 +56,42 @@ public class Enemy : MonoBehaviour
         
     }
 
-  
+    public void Ice()
+    {
+        moveSpeed *= 0.5f;
+        iceParticle.gameObject.SetActive(true);
+
+    }
+
+    public void StartBurning()
+    {
+        if (!isBurning)
+        {
+            isBurning = true;
+            StartCoroutine(Burn());
+            Invoke("StopBurning", 3.1f);
+            fireParticle.gameObject.SetActive(true);
+        }
+    }
+
+    public void StopBurning()
+    {
+        if (isBurning)
+        {
+            isBurning = false;
+            StopCoroutine(Burn());
+            fireParticle.gameObject.SetActive(false);
+        }
+    }
+
+    private IEnumerator Burn()
+    {
+        while (isBurning)
+        {
+            yield return new WaitForSeconds(burnInterval);
+            
+            TakeDamage(burnDamage);
+        }
+    }
+
 }
