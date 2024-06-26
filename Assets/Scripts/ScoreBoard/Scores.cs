@@ -10,7 +10,7 @@ namespace ScoreBoard
         {
             get
             {
-                return (int)GameManager.Instance.expSystem.currentEXP;
+                return (int)GameManager.Instance.expSystem.totalEXP;
             }
         }
 
