@@ -1,0 +1,16 @@
+{
+    "name": "com.radgar.radgaraudiotool.volume",
+    "rootNamespace": "Radgar.Volume",
+    "references": [
+        "GUID:5fdcce41753a3ec4496e089cd7b5e0c0"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

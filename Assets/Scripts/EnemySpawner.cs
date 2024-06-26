@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
     public float minDistance = 5f;
     public float maxDistance = 10f;
     private Transform player;
+    public bool isSpawnable = true;
 
     void Start()
     {
@@ -17,15 +18,18 @@ public class EnemySpawner : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(SpawnEnemies());
         InvokeRepeating("NewEnemies", 90, 210);
-        InvokeRepeating("IncreaseDiffuculty", 30, 60);
+        InvokeRepeating("IncreaseDifficulty", 30, 60);
     }
 
     IEnumerator SpawnEnemies()
     {
         while (true)
         {
-            Vector2 spawnPosition = GetRandomSpawnPosition();
-            Instantiate(enemyPrefab[Random.Range(0, maxEnemyType)], spawnPosition, Quaternion.identity);
+            if (isSpawnable)
+            {
+                Vector2 spawnPosition = GetRandomSpawnPosition();
+                Instantiate(enemyPrefab[Random.Range(0, maxEnemyType)], spawnPosition, Quaternion.identity);
+            }
             yield return new WaitForSeconds(spawnInterval);
         }
     }
@@ -39,26 +43,24 @@ public class EnemySpawner : MonoBehaviour
         return spawnPosition;
     }
 
-    public void IncreaseDiffuculty()
+    public void IncreaseDifficulty()
     {
-        if(spawnInterval > 0.2f)
+        if (isSpawnable && spawnInterval > 0.2f)
         {
             spawnInterval *= 0.97f;
         }
-       
-
     }
 
     public void NewEnemies()
     {
-        if(maxEnemyType < 4)
+        if (isSpawnable && maxEnemyType < 4)
         {
             maxEnemyType += 1;
         }
-       
     }
 
-
+    public void SetSpawnableState(bool spawnable = false)
+    {
+        isSpawnable = spawnable;
+    }
 }
-
-

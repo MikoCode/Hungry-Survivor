@@ -1,6 +1,3 @@
-using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,10 +14,30 @@ public class PlayerController : MonoBehaviour
     public Vector2 moveInput;
     public HealthBar healthBar;
 
+    private Vector2 initialPosition;
+    private float baseInterval;
+    private float baseUpgradeInterval;
+    private float baseMoveSpeed;
+    private int baseProjectileType;
+    private int baseMaxHealth;
+    private bool baseCanShoot;
+    private bool baseDoubleShoot;
+
     void Start()
     {
-        
         rb = GetComponent<Rigidbody2D>();
+        initialPosition = transform.position;
+
+        // Zapisywanie wartości bazowych
+        baseInterval = interval;
+        baseUpgradeInterval = upgradeInterval;
+        baseMoveSpeed = moveSpeed;
+        baseProjectileType = projectileType;
+        baseMaxHealth = maxHealth;
+        baseCanShoot = canShoot;
+        baseDoubleShoot = doubleShoot;
+
+        // Inicjalizacja bieżących wartości
         currentHealth = maxHealth;
     }
 
@@ -34,7 +51,6 @@ public class PlayerController : MonoBehaviour
         if (moveInput == Vector2.zero)
         {
             canShoot = true;
-           
         }
         else
         {
@@ -46,9 +62,7 @@ public class PlayerController : MonoBehaviour
     {
         OnFire();
         Shoot();
-
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
-      
     }
 
     void SingleShot()
@@ -62,19 +76,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
     public void DoubleShot()
     {
         GameObject nearestEnemy = FindNearestEnemy();
         if (nearestEnemy != null)
         {
             Vector2 targetPosition = nearestEnemy.transform.position;
-           
 
             GameObject projectile = Instantiate(projectilePrefab[projectileType], transform.position, Quaternion.identity);
             projectile.GetComponent<Projectile>().Initialize(targetPosition);
             GameObject projectile2 = Instantiate(projectilePrefab[projectileType], transform.position, Quaternion.identity);
-            projectile2.GetComponent<Projectile>().Initialize(new Vector2(targetPosition.x + Random.Range(-2,3), targetPosition.y));
+            projectile2.GetComponent<Projectile>().Initialize(new Vector2(targetPosition.x + Random.Range(-2, 3), targetPosition.y));
         }
     }
 
@@ -116,6 +128,7 @@ public class PlayerController : MonoBehaviour
     void Die()
     {
         // Implement death logic
+        Debug.Log("Player Died");
         GameManager.Instance.OnPlayerDie?.Invoke();
     }
 
@@ -125,8 +138,7 @@ public class PlayerController : MonoBehaviour
 
         if (canShoot && interval <= 0)
         {
-
-            if(doubleShoot == false)
+            if (doubleShoot == false)
             {
                 SingleShot();
                 interval = upgradeInterval;
@@ -136,7 +148,22 @@ public class PlayerController : MonoBehaviour
                 DoubleShot();
                 interval = upgradeInterval;
             }
-            
         }
+    }
+
+    [ContextMenu("Reset Player")] // This will add an option to reset the player in the context menu of the inspector
+    public void ResetPlayer()
+    {
+        transform.position = initialPosition;
+        currentHealth = baseMaxHealth;
+        moveInput = Vector2.zero;
+        canShoot = baseCanShoot;
+        doubleShoot = baseDoubleShoot;
+        interval = baseInterval;
+        upgradeInterval = baseUpgradeInterval;
+        moveSpeed = baseMoveSpeed;
+        projectileType = baseProjectileType;
+        healthBar.UpdateHealth(1); // Assuming health bar takes a normalized value
+        Debug.Log("Player has been reset to initial settings.");
     }
 }

@@ -1,0 +1,17 @@
+{
+    "name": "com.radgar.radgaraudiotool.audioplayer",
+    "rootNamespace": "Radgar.AudioPlayer",
+    "references": [
+        "GUID:5fdcce41753a3ec4496e089cd7b5e0c0",
+        "GUID:450d13d1c6dad0942928af90dc42a6ac"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

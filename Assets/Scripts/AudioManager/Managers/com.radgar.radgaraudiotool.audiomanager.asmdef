@@ -1,0 +1,16 @@
+{
+    "name": "com.radgar.radgaraudiotool.audiomanager",
+    "rootNamespace": "Radgar.AudioManagers",
+    "references": [
+        "GUID:450d13d1c6dad0942928af90dc42a6ac"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

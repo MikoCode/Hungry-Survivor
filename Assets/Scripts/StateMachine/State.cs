@@ -35,6 +35,9 @@ namespace HungrySurvivor.StateMachine
         [HideInInspector]
         public bool isActive = false;
 
+        public UnityEvent OnEnterState;
+        public UnityEvent OnExitState;
+
         private void Awake()
         {
             substates = new List<State>();
@@ -77,6 +80,7 @@ namespace HungrySurvivor.StateMachine
         public void EnterState()
         {
             SetState(true);
+            OnEnterState?.Invoke();
         }
 
         public void EnterStateWithParents()
@@ -89,6 +93,7 @@ namespace HungrySurvivor.StateMachine
         public void ExitState()
         {
             SetState(false);
+            OnExitState?.Invoke();
         }
 
         public void ToggleState()

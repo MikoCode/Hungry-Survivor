@@ -48,14 +48,17 @@
     <Compile Include="Assets\Scripts\StateMachine\Fade.cs" />
     <Compile Include="Assets\Scripts\UpgradeManager.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\ScoreBoard\ScoreDisplayer.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\StateMachine\State.cs" />
     <Compile Include="Assets\Scripts\EXPSystem.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\StateMachine\Transistion.cs" />
+    <Compile Include="Assets\Scripts\ScoreBoard\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Scripts\StateMachine\Move.cs" />
+    <Compile Include="Assets\Scripts\ScoreBoard\Scores.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
     <Compile Include="Assets\Scripts\Singleton\Singleton.cs" />
@@ -716,23 +719,59 @@
     <Reference Include="Unity.2D.IK.Runtime">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="PsdPlugin">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
-    </Reference>
     <Reference Include="com.unity.cinemachine.editor">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+    <Reference Include="Unity.2D.Common.Path.Editor">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.PixelPerfect.Editor">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Aseprite.Common">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.Aseprite.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras.Editor">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Runtime">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.PixelPerfect">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Aseprite.Editor">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.Aseprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="PsdPlugin">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Common.Path.Editor">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
+    <Reference Include="Unity.Burst">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
@@ -758,23 +797,11 @@
     <Reference Include="Unity.VisualScripting.Core.Editor">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect.Editor">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Aseprite.Common">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.Aseprite.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.005">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.005.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
@@ -782,17 +809,8 @@
     <Reference Include="Unity.InternalAPIEngineBridge.001">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Extras.Editor">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -806,23 +824,14 @@
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Collections">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Psdimporter.Editor">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Runtime">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
@@ -830,26 +839,20 @@
     <Reference Include="Unity.2D.Common.Editor">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Aseprite.Editor">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.Aseprite.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>C:\Users\Jakub\Documents\GitHub\Hungry-Survivor\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
@@ -859,17 +862,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="NaughtyAttributes.Test.csproj">
+      <Project>{cd748633-e09f-2c96-53eb-2d9d5539777e}</Project>
+      <Name>NaughtyAttributes.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.radgar.radgaraudiotool.audioplayer.csproj">
+      <Project>{7ad1efc9-0743-df49-ef6e-ac9738cb398e}</Project>
+      <Name>com.radgar.radgaraudiotool.audioplayer</Name>
+    </ProjectReference>
     <ProjectReference Include="NaughtyAttributes.Core.csproj">
       <Project>{c1ed0c7f-25e3-810b-e1eb-dbdfcb544fe5}</Project>
       <Name>NaughtyAttributes.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.radgar.radgaraudiotool.volume.csproj">
+      <Project>{7e851c6d-3dd7-645e-6ea0-fbd08a7c500e}</Project>
+      <Name>com.radgar.radgaraudiotool.volume</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.radgar.radgaraudiotool.audiomanager.csproj">
+      <Project>{6ec303e6-a827-7df3-61f8-c69a7f4167f1}</Project>
+      <Name>com.radgar.radgaraudiotool.audiomanager</Name>
     </ProjectReference>
     <ProjectReference Include="NaughtyAttributes.Editor.csproj">
       <Project>{33004292-6e79-6199-8590-9f93052b94b5}</Project>
       <Name>NaughtyAttributes.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="NaughtyAttributes.Test.csproj">
-      <Project>{cd748633-e09f-2c96-53eb-2d9d5539777e}</Project>
-      <Name>NaughtyAttributes.Test</Name>
+    <ProjectReference Include="com.radgar.radgaraudiotool.audio.csproj">
+      <Project>{36401ab9-b9a4-4843-9ef7-70d7bd7063bb}</Project>
+      <Name>com.radgar.radgaraudiotool.audio</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -24,24 +24,38 @@ public class EXPSystem : MonoBehaviour
     public UpgradeManager upgradeManager;
     public GameObject player;
 
+    // Bazowe ustawienia
+    private int baseTotalEXP;
+    private int basePlayerLevel;
+    private float baseCurrentEXP;
+    private float baseExpNeeded;
+    private float baseSliderValue;
+    private Vector3 basePlayerScale;
+
     // Start is called before the first frame update
     void Start()
     {
         initialScale = player.transform.localScale;
         spawner = GetComponent<EnemySpawner>();
+
+        // Zapamiętaj bazowe ustawienia
+        baseTotalEXP = totalEXP;
+        basePlayerLevel = PlayerLevel;
+        baseCurrentEXP = currentEXP;
+        baseExpNeeded = expNeeded;
+        baseSliderValue = slider.value;
+        basePlayerScale = player.transform.localScale;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) 
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-
             GainExp(50);
         }
     }
 
-   
     public void LevelUp()
     {
         PlayerLevel += 1;
@@ -52,15 +66,13 @@ public class EXPSystem : MonoBehaviour
         upgradeButtons.gameObject.SetActive(true);
         upgradeManager.AssignActionsToButtons();
         Time.timeScale = 0;
-       
-        
     }
 
     public void GainExp(int exp)
     {
         totalEXP += exp;
         currentEXP += exp;
-        if(currentEXP >= expNeeded && PlayerLevel <= maxLevel - 1)
+        if (currentEXP >= expNeeded && PlayerLevel <= maxLevel - 1)
         {
             LevelUp();
         }
@@ -72,15 +84,12 @@ public class EXPSystem : MonoBehaviour
     {
         float scalePercentage = (float)totalEXP / maxEXP; // Obliczenie procentowej wartości poziomu
         float newScale = Mathf.Lerp(minScale, maxScale, scalePercentage); // Interpolacja liniowa dla nowej skali gracza
-       player.gameObject.transform.localScale = initialScale * newScale; // Ustawienie nowej skali gracza
+        player.gameObject.transform.localScale = initialScale * newScale; // Ustawienie nowej skali gracza
     }
 
-
     public void UpdateSlider()
-
     {
         levelValue = (currentEXP / expNeeded);
-
         slider.value = levelValue;
     }
 
@@ -89,5 +98,20 @@ public class EXPSystem : MonoBehaviour
         Time.timeScale = 1;
         upgradeButtons.SetActive(false);
     }
-}
 
+    // Metoda resetująca ustawienia do wartości fabrycznych
+    public void ResetToFactorySettings()
+    {
+        totalEXP = baseTotalEXP;
+        PlayerLevel = basePlayerLevel;
+        currentEXP = baseCurrentEXP;
+        expNeeded = baseExpNeeded;
+        slider.value = baseSliderValue;
+        player.transform.localScale = basePlayerScale;
+
+        // Aktualizacja UI
+        sliderText.text = "lvl " + PlayerLevel;
+        UpdateSlider();
+        UpdateScale();
+    }
+}
