@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using HungrySurvivor.Enemies;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour

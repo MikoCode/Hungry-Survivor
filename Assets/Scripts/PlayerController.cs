@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -22,6 +23,13 @@ public class PlayerController : MonoBehaviour
     private int baseMaxHealth;
     private bool baseCanShoot;
     private bool baseDoubleShoot;
+
+    [SerializeField] 
+    private UnityEvent OnShoot;
+    [SerializeField] 
+    private UnityEvent OnHeal;
+    [SerializeField] 
+    private UnityEvent OnTakeDamage;
 
     void Start()
     {
@@ -113,6 +121,7 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.UpdateHealth(currentHealth / maxHealth);
+        OnTakeDamage?.Invoke();
         if (currentHealth <= 0)
         {
             Die();
@@ -123,6 +132,7 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth += heal;
         healthBar.UpdateHealth(currentHealth / maxHealth);
+        OnHeal?.Invoke();
     }
 
     void Die()
@@ -148,10 +158,12 @@ public class PlayerController : MonoBehaviour
                 DoubleShot();
                 interval = upgradeInterval;
             }
+            
+            OnShoot?.Invoke();
         }
     }
 
-    [ContextMenu("Reset Player")] // This will add an option to reset the player in the context menu of the inspector
+    [ContextMenu("Reset Player")] 
     public void ResetPlayer()
     {
         transform.position = initialPosition;

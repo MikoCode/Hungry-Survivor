@@ -389,6 +389,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseAudioManager 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1563694421466851914, guid: d2f9c3c7549722548ac580e83545047a, type: 3}
+      propertyPath: _mainAudio.playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1563694421466851914, guid: d2f9c3c7549722548ac580e83545047a, type: 3}
+      propertyPath: _sfxAudio.clips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1563694421466851914, guid: d2f9c3c7549722548ac580e83545047a, type: 3}
+      propertyPath: _sfxAudio.clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
+    - target: {fileID: 1563694421466851914, guid: d2f9c3c7549722548ac580e83545047a, type: 3}
+      propertyPath: _sfxAudio.clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
+    - target: {fileID: 1563694421466851914, guid: d2f9c3c7549722548ac580e83545047a, type: 3}
+      propertyPath: _sfxAudio.clips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
     - target: {fileID: 1563694421466851915, guid: d2f9c3c7549722548ac580e83545047a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1208,6 +1228,8 @@ GameObject:
   - component: {fileID: 573153767}
   - component: {fileID: 573153768}
   - component: {fileID: 573153769}
+  - component: {fileID: 573153770}
+  - component: {fileID: 573153771}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -1236,7 +1258,7 @@ MonoBehaviour:
   spawnInterval: 2.5
   minDistance: 5
   maxDistance: 10
-  isSpawnable: 1
+  isSpawnable: 0
 --- !u!4 &573153766
 Transform:
   m_ObjectHideFlags: 0
@@ -1320,6 +1342,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 140253200}
+        m_TargetAssemblyTypeName: Radgar.AudioManagers.BaseAudioManager, com.radgar.radgaraudiotool.audiomanager
+        m_MethodName: PlaySfxAudio
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 573153770}
+        m_TargetAssemblyTypeName: HungrySurvivor.Enemy.DestroyEnemies, Assembly-CSharp
+        m_MethodName: DestroyAllEnemiesInScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 573153771}
+        m_TargetAssemblyTypeName: HungrySurvivor.Experience.DestroyExpBalls, Assembly-CSharp
+        m_MethodName: DestroyAllExperienceInScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnEndGame:
     m_PersistentCalls:
       m_Calls: []
@@ -1380,6 +1438,30 @@ MonoBehaviour:
   button2: {fileID: 1506863026}
   button3: {fileID: 589614842}
   playerController: {fileID: 1964642316}
+--- !u!114 &573153770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573153764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2574a08c9743ba93da3d51f59af86c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &573153771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573153764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 422e2ba73d8a4734b9384a9f96ef5624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &589614840
 GameObject:
   m_ObjectHideFlags: 0
@@ -4145,6 +4227,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 573153767}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1851956096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4714,6 +4808,9 @@ MonoBehaviour:
   doubleShoot: 0
   moveInput: {x: 0, y: 0}
   healthBar: {fileID: 661488522}
+  OnShoot:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &1964642317
 Rigidbody2D:
   serializedVersion: 4

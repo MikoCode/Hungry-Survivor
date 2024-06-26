@@ -47,22 +47,24 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\StateMachine\Fade.cs" />
     <Compile Include="Assets\Scripts\UpgradeManager.cs" />
-    <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\ScoreBoard\ScoreDisplayer.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\StateMachine\State.cs" />
-    <Compile Include="Assets\Scripts\EXPSystem.cs" />
-    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\Exp\EXPBall.cs" />
+    <Compile Include="Assets\Scripts\Exp\DestroyExpBalls.cs" />
     <Compile Include="Assets\Scripts\StateMachine\Transistion.cs" />
+    <Compile Include="Assets\Scripts\Exp\EXPSystem.cs" />
     <Compile Include="Assets\Scripts\ScoreBoard\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Scripts\StateMachine\Move.cs" />
+    <Compile Include="Assets\Scripts\Enemy\DestroyEnemies.cs" />
     <Compile Include="Assets\Scripts\ScoreBoard\Scores.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
     <Compile Include="Assets\Scripts\Singleton\Singleton.cs" />
-    <Compile Include="Assets\Scripts\EXPBall.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -862,13 +864,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="NaughtyAttributes.Test.csproj">
-      <Project>{cd748633-e09f-2c96-53eb-2d9d5539777e}</Project>
-      <Name>NaughtyAttributes.Test</Name>
-    </ProjectReference>
     <ProjectReference Include="com.radgar.radgaraudiotool.audioplayer.csproj">
       <Project>{7ad1efc9-0743-df49-ef6e-ac9738cb398e}</Project>
       <Name>com.radgar.radgaraudiotool.audioplayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="NaughtyAttributes.Test.csproj">
+      <Project>{cd748633-e09f-2c96-53eb-2d9d5539777e}</Project>
+      <Name>NaughtyAttributes.Test</Name>
     </ProjectReference>
     <ProjectReference Include="NaughtyAttributes.Core.csproj">
       <Project>{c1ed0c7f-25e3-810b-e1eb-dbdfcb544fe5}</Project>
