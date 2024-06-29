@@ -1,47 +1,66 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaughtyAttributes.Test", "NaughtyAttributes.Test.csproj", "{cd748633-e09f-2c96-53eb-2d9d5539777e}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaughtyAttributes.Test", "NaughtyAttributes.Test.csproj", "{338674CD-9FE0-962C-53EB-2D9D5539777E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaughtyAttributes.Core", "NaughtyAttributes.Core.csproj", "{c1ed0c7f-25e3-810b-e1eb-dbdfcb544fe5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaughtyAttributes.Core", "NaughtyAttributes.Core.csproj", "{7F0CEDC1-E325-0B81-E1EB-DBDFCB544FE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaughtyAttributes.Editor", "NaughtyAttributes.Editor.csproj", "{33004292-6e79-6199-8590-9f93052b94b5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaughtyAttributes.Editor", "NaughtyAttributes.Editor.csproj", "{92420033-796E-9961-8590-9F93052B94B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.radgar.radgaraudiotool.audiomanager", "com.radgar.radgaraudiotool.audiomanager.csproj", "{6ec303e6-a827-7df3-61f8-c69a7f4167f1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.radgar.radgaraudiotool.audiomanager", "com.radgar.radgaraudiotool.audiomanager.csproj", "{E603C36E-27A8-F37D-61F8-C69A7F4167F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{6cda6605-057a-7e25-16bb-ab715043cdba}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{0566DA6C-7A05-257E-16BB-AB715043CDBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.radgar.radgaraudiotool.audioplayer", "com.radgar.radgaraudiotool.audioplayer.csproj", "{7ad1efc9-0743-df49-ef6e-ac9738cb398e}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.radgar.radgaraudiotool.audioplayer", "com.radgar.radgaraudiotool.audioplayer.csproj", "{C9EFD17A-4307-49DF-EF6E-AC9738CB398E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.radgar.radgaraudiotool.audio", "com.radgar.radgaraudiotool.audio.csproj", "{36401ab9-b9a4-4843-9ef7-70d7bd7063bb}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.radgar.radgaraudiotool.audio", "com.radgar.radgaraudiotool.audio.csproj", "{B91A4036-A4B9-4348-9EF7-70D7BD7063BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.radgar.radgaraudiotool.volume", "com.radgar.radgaraudiotool.volume.csproj", "{7e851c6d-3dd7-645e-6ea0-fbd08a7c500e}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.radgar.radgaraudiotool.volume", "com.radgar.radgaraudiotool.volume.csproj", "{6D1C857E-D73D-5E64-6EA0-FBD08A7C500E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{db39649f-993b-4486-dbce-e949d38b74bc}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{9F6439DB-3B99-8644-DBCE-E949D38B74BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{cd748633-e09f-2c96-53eb-2d9d5539777e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{cd748633-e09f-2c96-53eb-2d9d5539777e}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{c1ed0c7f-25e3-810b-e1eb-dbdfcb544fe5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{c1ed0c7f-25e3-810b-e1eb-dbdfcb544fe5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33004292-6e79-6199-8590-9f93052b94b5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33004292-6e79-6199-8590-9f93052b94b5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6ec303e6-a827-7df3-61f8-c69a7f4167f1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6ec303e6-a827-7df3-61f8-c69a7f4167f1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6cda6605-057a-7e25-16bb-ab715043cdba}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6cda6605-057a-7e25-16bb-ab715043cdba}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7ad1efc9-0743-df49-ef6e-ac9738cb398e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7ad1efc9-0743-df49-ef6e-ac9738cb398e}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{36401ab9-b9a4-4843-9ef7-70d7bd7063bb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{36401ab9-b9a4-4843-9ef7-70d7bd7063bb}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7e851c6d-3dd7-645e-6ea0-fbd08a7c500e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7e851c6d-3dd7-645e-6ea0-fbd08a7c500e}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{db39649f-993b-4486-dbce-e949d38b74bc}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{db39649f-993b-4486-dbce-e949d38b74bc}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{338674CD-9FE0-962C-53EB-2D9D5539777E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{338674CD-9FE0-962C-53EB-2D9D5539777E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{338674CD-9FE0-962C-53EB-2D9D5539777E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{338674CD-9FE0-962C-53EB-2D9D5539777E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F0CEDC1-E325-0B81-E1EB-DBDFCB544FE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0CEDC1-E325-0B81-E1EB-DBDFCB544FE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0CEDC1-E325-0B81-E1EB-DBDFCB544FE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0CEDC1-E325-0B81-E1EB-DBDFCB544FE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92420033-796E-9961-8590-9F93052B94B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92420033-796E-9961-8590-9F93052B94B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92420033-796E-9961-8590-9F93052B94B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92420033-796E-9961-8590-9F93052B94B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E603C36E-27A8-F37D-61F8-C69A7F4167F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E603C36E-27A8-F37D-61F8-C69A7F4167F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E603C36E-27A8-F37D-61F8-C69A7F4167F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E603C36E-27A8-F37D-61F8-C69A7F4167F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0566DA6C-7A05-257E-16BB-AB715043CDBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0566DA6C-7A05-257E-16BB-AB715043CDBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0566DA6C-7A05-257E-16BB-AB715043CDBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0566DA6C-7A05-257E-16BB-AB715043CDBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9EFD17A-4307-49DF-EF6E-AC9738CB398E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9EFD17A-4307-49DF-EF6E-AC9738CB398E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9EFD17A-4307-49DF-EF6E-AC9738CB398E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9EFD17A-4307-49DF-EF6E-AC9738CB398E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B91A4036-A4B9-4348-9EF7-70D7BD7063BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B91A4036-A4B9-4348-9EF7-70D7BD7063BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B91A4036-A4B9-4348-9EF7-70D7BD7063BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B91A4036-A4B9-4348-9EF7-70D7BD7063BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D1C857E-D73D-5E64-6EA0-FBD08A7C500E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D1C857E-D73D-5E64-6EA0-FBD08A7C500E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D1C857E-D73D-5E64-6EA0-FBD08A7C500E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D1C857E-D73D-5E64-6EA0-FBD08A7C500E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F6439DB-3B99-8644-DBCE-E949D38B74BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F6439DB-3B99-8644-DBCE-E949D38B74BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F6439DB-3B99-8644-DBCE-E949D38B74BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F6439DB-3B99-8644-DBCE-E949D38B74BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
