@@ -26,6 +26,7 @@ public class EXPBall : MonoBehaviour
            GiveExp(exp); 
 
             Debug.Log("EXP");
+            collision.gameObject.GetComponent<PlayerController>().OnHeal?.Invoke();
             Destroy(gameObject);
         }
     }

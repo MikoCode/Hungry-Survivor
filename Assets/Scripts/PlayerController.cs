@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] 
     private UnityEvent OnShoot;
     [SerializeField] 
-    private UnityEvent OnHeal;
+    public UnityEvent OnHeal;
     [SerializeField] 
     private UnityEvent OnTakeDamage;
 

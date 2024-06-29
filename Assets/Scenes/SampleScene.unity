@@ -284,7 +284,7 @@ RectTransform:
   m_GameObject: {fileID: 137122238}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.53313065}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1569301701}
@@ -292,7 +292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -368, y: 397}
+  m_AnchoredPosition: {x: -537.5, y: 397}
   m_SizeDelta: {x: 67.643005, y: 61.7082}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &137122240
@@ -395,7 +395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1563694421466851914, guid: d2f9c3c7549722548ac580e83545047a, type: 3}
       propertyPath: _sfxAudio.clips.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1563694421466851914, guid: d2f9c3c7549722548ac580e83545047a, type: 3}
       propertyPath: _sfxAudio.clips.Array.data[0]
@@ -408,7 +408,15 @@ PrefabInstance:
     - target: {fileID: 1563694421466851914, guid: d2f9c3c7549722548ac580e83545047a, type: 3}
       propertyPath: _sfxAudio.clips.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
+      objectReference: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+    - target: {fileID: 1563694421466851914, guid: d2f9c3c7549722548ac580e83545047a, type: 3}
+      propertyPath: _sfxAudio.clips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
+    - target: {fileID: 1563694421466851914, guid: d2f9c3c7549722548ac580e83545047a, type: 3}
+      propertyPath: _sfxAudio.clips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
     - target: {fileID: 1563694421466851915, guid: d2f9c3c7549722548ac580e83545047a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -578,7 +586,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -114, y: 566}
+  m_AnchoredPosition: {x: -114, y: 627.2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &414349805
@@ -1230,6 +1238,7 @@ GameObject:
   - component: {fileID: 573153769}
   - component: {fileID: 573153770}
   - component: {fileID: 573153771}
+  - component: {fileID: 573153772}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -1295,6 +1304,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: EnemySpawner, Assembly-CSharp
         m_MethodName: SetSpawnableState
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 140253200}
+        m_TargetAssemblyTypeName: Radgar.AudioManagers.BaseAudioManager, com.radgar.radgaraudiotool.audiomanager
+        m_MethodName: PlaySfxAudio
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1462,6 +1483,102 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422e2ba73d8a4734b9384a9f96ef5624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &573153772
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573153764}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1c083765e5d8ca74194b7f3d3962b3ac, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.417
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &589614840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,7 +1607,7 @@ RectTransform:
   m_GameObject: {fileID: 589614840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.53313065}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1767182040}
@@ -1498,7 +1615,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 253, y: 397}
+  m_AnchoredPosition: {x: 426.9, y: 397}
   m_SizeDelta: {x: 67.643005, y: 61.7082}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &589614842
@@ -1619,8 +1736,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 25.459042}
-  m_SizeDelta: {x: 145.0971, y: 100}
+  m_AnchoredPosition: {x: 2.6614, y: 29.87872}
+  m_SizeDelta: {x: 225.147, y: 149.3025}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &661488520
 MonoBehaviour:
@@ -1673,7 +1790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1964642315}
-  offset: {x: 0, y: 1, z: 0}
+  offset: {x: 0, y: 0.5, z: 0}
   healthFill: {fileID: 1780388476}
 --- !u!1 &734750717
 GameObject:
@@ -2850,7 +2967,7 @@ RectTransform:
   m_GameObject: {fileID: 1506863024}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.53313065}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 865858013}
@@ -2858,7 +2975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -57.623993, y: 397}
+  m_AnchoredPosition: {x: -67.124, y: 397}
   m_SizeDelta: {x: 67.643, y: 61.7082}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1506863026
@@ -4091,8 +4208,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00023437, y: 0.0000085831}
-  m_SizeDelta: {x: 145.1, y: 100}
+  m_AnchoredPosition: {x: 0.00026703, y: -0.0005683899}
+  m_SizeDelta: {x: 225.15, y: 149.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1780388476
 MonoBehaviour:
@@ -4796,8 +4913,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interval: 2
   upgradeInterval: 1
-  moveSpeed: 5
-  projectileType: 2
+  moveSpeed: 0.4
+  projectileType: 0
   maxHealth: 100
   projectilePrefab:
   - {fileID: 5201114788878711869, guid: 7b66c3036232ff141b2751cbbc322c50, type: 3}
@@ -4810,7 +4927,49 @@ MonoBehaviour:
   healthBar: {fileID: 661488522}
   OnShoot:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 140253200}
+        m_TargetAssemblyTypeName: Radgar.AudioManagers.BaseAudioManager, com.radgar.radgaraudiotool.audiomanager
+        m_MethodName: PlaySfxAudio
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 140253200}
+        m_TargetAssemblyTypeName: Radgar.AudioManagers.BaseAudioManager, com.radgar.radgaraudiotool.audiomanager
+        m_MethodName: PlaySfxAudio
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 140253200}
+        m_TargetAssemblyTypeName: Radgar.AudioManagers.BaseAudioManager, com.radgar.radgaraudiotool.audiomanager
+        m_MethodName: PlaySfxAudio
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &1964642317
 Rigidbody2D:
   serializedVersion: 4
